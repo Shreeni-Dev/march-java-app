@@ -10,19 +10,19 @@ pipeline {
       maven "maven"
   }
     stages {
-        stage('git-clone') {
+        stage('dev-git-clone') {
             steps {
                 git branch: 'main', url: 'https://github.com/Shreeni-Dev/march-java-app.git' 
             }
         }
         
-        stage('maven-packages') {
+        stage('dev-maven-packages') {
             steps {
                sh "mvn package"
             }
         }
         
-         stage('Test') {
+         stage('DEV-Test') {
             steps {
                 sh 'mvn test'
             }
